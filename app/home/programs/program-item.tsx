@@ -24,7 +24,7 @@ export default function Program_Item({ i, reverse }: { i: any, reverse: boolean 
                     {i.body}
                 </div>
                 <button className="mt-[25px] border-2 border-[#026935] text-[#026935] hover:bg-[#026935] hover:text-white transition-all duration-300 px-[20px] py-[7px] lg:px-[30px] lg:py-[10px] flex items-center justify-center gap-[10px] text-[14px] poppins rounded-[15px] font-semibold cursor-pointer">
-                    Learn More <IoIosArrowForward className="text-[18px]" />
+                    View More <IoIosArrowForward className="text-[18px]" />
                 </button>
             </div>
 

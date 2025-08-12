@@ -41,6 +41,7 @@ export default function Footer() {
                             <div>LinkedIn</div>
                             <div>X</div>
                             <div>YouTube</div>
+                            <div>Tiktok</div>
                         </div>
                     </div>
                 </div>

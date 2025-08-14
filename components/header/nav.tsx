@@ -65,16 +65,16 @@ export default function Nav({ showNav, setShowNav }: { showNav: boolean, setShow
 
                 <div className="pl-[5px] flex flex-col xl:flex-row xl:items-center xl:p-0">
                     <div className="text-[#026935] font-semibold xl:hidden">
-                        <Link href={"/"}>Donate</Link>
+                        <Link href={"/donate"}>Donate</Link>
                     </div>
                     <Link href={"/login"} className={`border border-[#026935] bg-[#026935] text-[#f9f9f9] hover:bg-transparent hover:text-[#026935] font-semibold px-[30px] py-[10px] rounded-full w-max transition-all duration-300 mt-[25px] xl:mt-0 cursor-pointer`}>
                         Login
                     </Link>
-                    <button className={`border border-[#026935] bg-transparent text-[#026935] hover:bg-[#026935] hover:text-[#f9f9f9] font-semibold px-[30px] py-[10px] rounded-full w-max transition-all duration-300 mt-[20px] xl:mt-0 xl:ml-[12px] cursor-pointer`}>
+                    <Link href={"/"} className={`border border-[#026935] bg-transparent text-[#026935] hover:bg-[#026935] hover:text-[#f9f9f9] font-semibold px-[30px] py-[10px] rounded-full w-max transition-all duration-300 mt-[20px] xl:mt-0 xl:ml-[12px] cursor-pointer`}>
                         Join Us
-                    </button>
+                    </Link>
                     <div className="text-[#026935] font-semibold hidden xl:block xl:ml-[30px] relative group">
-                        <Link href={"/"}>Donate</Link>
+                        <Link href={"/donate"}>Donate</Link>
                         <div className="absolute -bottom-[5px] left-0 h-[3px] w-0 group-hover:w-full transition-all duration-300 bg-[#026935] rounded-full"></div>
                     </div>
                 </div>

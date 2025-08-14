@@ -30,7 +30,7 @@ export default function Footer() {
                         <div className="flex flex-col items-center justify-center lg:items-start mt-[15px] gap-[7px]">
                             <div>Project</div>
                             <div>Event</div>
-                            <div>Donate</div>
+                            <Link href={"/donate"}>Donate</Link>
                         </div>
                     </div>
                     <div className="w-full flex flex-col items-center justify-center lg:items-start lg:justify-start">

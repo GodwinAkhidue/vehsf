@@ -3,10 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { CgMenuRightAlt } from "react-icons/cg";
 import Nav from "./nav";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
     const [showNav, setShowNav] = useState(false);
+    const pathname = usePathname();
+
+    useEffect(() => {
+        setShowNav(false);
+    }, [pathname])
 
     return (
         <div className="w-full shadow-lg flex items-center justify-center bg-[#F9FFFC] relative z-50">

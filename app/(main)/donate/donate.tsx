@@ -1,5 +1,6 @@
 import { FaUser } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
+import { programs } from "@/constants/programs";
 
 export default function Donate() {
 
@@ -20,14 +21,6 @@ export default function Donate() {
         "One time",
         "Monthly",
         "Quarterly"
-    ];
-
-    const donationPurposes = [
-        "Select Purpose",
-        "Purpose 1",
-        "Purpose 2",
-        "Purpose 3",
-        "Purpose 4",
     ];
 
     const paymentMethods = [
@@ -90,8 +83,8 @@ export default function Donate() {
                         <div className="mt-[15px] w-full flex items-center justify-center">
                             <select className="w-[180px] border-2 border-[#026935] p-[10px] text-[14px] font-medium rounded-[5px] outline-none">
                                 {
-                                    donationPurposes.map((i, index) => (
-                                        <option key={index}>{i}</option>
+                                    programs.map((i, index) => (
+                                        <option key={index} value={i.header}>{i.header}</option>
                                     ))
                                 }
                             </select>

@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa";
+import { FaX, FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
     return (
-        <div className="bg-[#E5E5E5] w-full flex items-center justify-center px-[15px] lg:px-[50px] py-[30px] lg:py-[100px] poppins">
+        <div className="bg-[#E5E5E5] w-full flex flex-col items-center justify-center px-[15px] lg:px-[50px] py-[30px] lg:pt-[100px] lg:pb-[50px] poppins">
             <div className="w-full max-w-[1400px] flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-[50px]">
                 <div>
                     <Image
@@ -34,14 +36,13 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="w-full flex flex-col items-center justify-center lg:items-start lg:justify-start">
-                        <div className="font-semibold">Connect</div>
-                        <div className="flex flex-col items-center justify-center lg:items-start mt-[15px] gap-[7px]">
-                            <div>Facebook</div>
-                            <div>Instagram</div>
-                            <div>LinkedIn</div>
-                            <div>X</div>
-                            <div>YouTube</div>
-                            <div>Tiktok</div>
+                        <div className="flex lg:flex-col items-center justify-center lg:items-start mt-[15px] gap-[10px] lg:gap-[15px] text-[20px] lg:text-[24px]">
+                            <div><FaFacebook /></div>
+                            <div><FaInstagram /></div>
+                            <div><FaLinkedin /></div>
+                            <div><FaXTwitter /></div>
+                            <div><FaYoutube /></div>
+                            <div><FaTiktok /></div>
                         </div>
                     </div>
                 </div>
@@ -54,6 +55,9 @@ export default function Footer() {
                         </button>
                     </div>
                 </div>
+            </div>
+            <div className="pt-[50px] lg:pt-[100px] text-gray-500 text-[12px] lg:text-[14px]">
+                &copy; 2025, Temany Technologies
             </div>
         </div>
     );

@@ -17,7 +17,7 @@ export default function Testimonials() {
                     volunteering activities. This ensures your safety and peace of mind while serving.
                 </div>
                 <div className="w-full mt-[30px] lg:mt-[65px] relative h-[200px] rounded-[10px] overflow-hidden">
-                    <Image src={"/images/volunteer_signup/3.png"} alt="vehsf" fill className="object-cover" />
+                    <Image src={"/images/volunteer_signup/3.jpg"} alt="vehsf" fill className="object-cover" />
                     <div className="w-full h-full relative z-10 bg-[#00000080]">
 
                     </div>

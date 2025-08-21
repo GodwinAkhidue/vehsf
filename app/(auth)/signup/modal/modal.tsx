@@ -83,7 +83,7 @@ export default function Modal({ url, showModal }: { url: any, showModal: boolean
                                             <div onClick={() => prevSlide()} className="cursor-pointer py-[10px] px-[25px] lg:px-[33px] border-2 border-[#026935] text-[#026935] rounded-[10px] mt-[10px] font-semibold">
                                                 Previous
                                             </div>
-                                            <div onClick={() => router.push("/signup/volunteer")} className="cursor-pointer py-[10px] px-[25px] lg:px-[33px] bg-[#026935] text-white rounded-[10px] mt-[10px] font-semibold">
+                                            <div onClick={() => router.push("/signup/volunteer/personal-info")} className="cursor-pointer py-[10px] px-[25px] lg:px-[33px] bg-[#026935] text-white rounded-[10px] mt-[10px] font-semibold">
                                                 Continue
                                             </div>
                                         </div>

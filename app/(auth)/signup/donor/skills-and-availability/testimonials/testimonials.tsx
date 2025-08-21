@@ -27,20 +27,21 @@ export default function Testimonials() {
     ];
 
     return (
-        <div className="poppins w-full max-w-[608px] shrink-0 hidden lg:block">
+        <div className="poppins w-full max-w-[608px] shrink-0 hidden lg:block sticky bottom-0">
             <div>
                 <Image src={"/images/logo.png"} alt="vehsf" width={999} height={999} className="w-[120px]" />
             </div>
             <div className="bg-[#026935] w-full rounded-[10px] p-[20px] lg:px-[72px] lg:py-[48px] mt-[5px] text-white">
                 <div className="font-semibold text-[24px] lg:text-[48px] lg:leading-tight">
-                    Join our volunteer network
+                    Share your Talent, Make a Difference
                 </div>
                 <div className="mt-[10px] text-[12px] lg:text-[18px] lg:mt-[26px] text-[#E2E1E8]">
-                    Make a difference in lives and communities. Your skills,
-                    time, and passion can change the world.
+                    Use this section to highlight the unique skills you bring—whether it’s teaching,
+                    organizing, healthcare, or creative work—so we can match you with the right
+                    opportunities to create impact.
                 </div>
                 <div className="w-full mt-[30px] lg:mt-[65px] relative h-[200px] rounded-[10px] overflow-hidden">
-                    <Image src={"/images/volunteer_signup/1.jpg"} alt="vehsf" fill className="object-cover" />
+                    <Image src={"/images/volunteer_signup/2.jpg"} alt="vehsf" fill className="object-cover" />
                     <div className="w-full h-full relative z-10 bg-[#00000080]">
 
                     </div>

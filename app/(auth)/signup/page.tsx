@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Modal from "./modal/modal";
 
 export default function Signup_Page() {
@@ -12,19 +11,17 @@ export default function Signup_Page() {
     const joinoptions = [
         {
             name: "Volunteer",
-            url: "/signup/volunteer"
+            url: "/signup/volunteer/personal-info"
         },
         {
             name: "NGO",
-            url: "/signup/ngo"
+            url: "/signup/ngo/personal-info"
         },
         {
             name: "Donor",
-            url: "/signup/donor"
+            url: "/signup/donor/personal-info"
         },
     ];
-
-    const router = useRouter();
 
     const [showModal, setShowModal] = useState(false);
 

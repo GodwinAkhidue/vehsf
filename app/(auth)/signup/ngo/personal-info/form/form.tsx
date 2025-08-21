@@ -6,8 +6,11 @@ import { PiGenderMale } from "react-icons/pi";
 import Location_Input from "@/components/form/location-input";
 import Language_Spoken from "./language_spoken/language_spoken";
 import { RiAttachment2 } from "react-icons/ri";
+import { useRouter } from "next/navigation";
 
-export default function Form_1() {
+export default function Form() {
+
+    const router = useRouter();
 
     return (
         <div className="w-full ">
@@ -97,7 +100,7 @@ export default function Form_1() {
                 </div>
             </div>
 
-            <div className="cursor-pointer py-[10px] px-[33px] bg-[#026935] text-white rounded-[10px] mt-[40px] font-semibold w-max">
+            <div onClick={() => router.push("/signup/ngo/skills-and-availability")} className="cursor-pointer py-[10px] px-[33px] bg-[#026935] text-white rounded-[10px] mt-[40px] font-semibold w-max">
                 Next
             </div>
         </div>

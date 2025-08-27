@@ -3,6 +3,7 @@ import "../globals.css";
 import Footer from "@/components/footer/footer";
 import User_Header from "@/components/user_header/header";
 import Dashboard_Navigation from "@/components/dashboard_nav/nav";
+import Dashboard_Notifications from "@/components/notifications/page";
 
 export const metadata: Metadata = {
     title: "VEHSF",
@@ -28,6 +29,7 @@ export default function RootLayout({
                 <div className="flex lg:gap-[10px]">
                     <Dashboard_Navigation />
                     {children}
+                    <Dashboard_Notifications />
                 </div>
                 <Footer />
             </body>

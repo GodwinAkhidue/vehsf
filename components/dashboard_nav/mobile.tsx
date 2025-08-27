@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useState } from "react";
 import { BiDonateHeart } from "react-icons/bi";
 import { FaCheckCircle } from "react-icons/fa";
 import { GoBell } from "react-icons/go";
@@ -11,6 +12,15 @@ import { MdOutlineLogout, MdOutlineSpaceDashboard } from "react-icons/md";
 import { TiMessage } from "react-icons/ti";
 
 export default function Dashboard_Navigation_Mobile() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <Page />
+        </Suspense>
+    );
+}
+
+
+const Page = () => {
 
     const [showNav, setShowNav] = useState(false);
 
@@ -40,11 +50,6 @@ export default function Dashboard_Navigation_Mobile() {
             name: "Messages",
             link: "/dashboard/messages"
         },
-        {
-            icon: GoBell,
-            name: "Notifications",
-            link: "/dashboard/notifications"
-        },
     ];
 
     const links2 = [
@@ -65,6 +70,23 @@ export default function Dashboard_Navigation_Mobile() {
         },
     ]
 
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const notification = searchParams.get("notification");
+
+    const addQuery = () => {
+        const params = new URLSearchParams(searchParams.toString());
+
+        if (notification) {
+            params.delete("notification");
+        } else {
+            params.set("notification", "true"); // add or update query param
+        }
+
+        router.push(`?${params.toString()}`);
+        setShowNav(false);
+    };
+
     return (
         <div className="bg-white text-[#121212] poppins lg:hidden">
             <div onClick={() => setShowNav(!showNav)} className={`${showNav ? "w-[120px] duration-300 delay-100 fixed" : "w-[22px] duration-200 absolute"} transition-all top-[23px] left-[15px] z-[52] text-[20px] cursor-pointer flex items-center gap-[5px] overflow-hidden`}>
@@ -84,6 +106,10 @@ export default function Dashboard_Navigation_Mobile() {
                             </Link>
                         ))
                     }
+                    <button onClick={() => addQuery()} className="flex items-center gap-[5px]">
+                        <GoBell className="text-[20px]" />
+                        <div className="text-[14px] font-semibold">Notifications</div>
+                    </button>
                     <div className="my-[10px] h-[1px] bg-[#C4C4C4] w-[190px]">
 
                     </div>

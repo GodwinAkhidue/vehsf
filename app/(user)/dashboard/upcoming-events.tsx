@@ -53,7 +53,7 @@ export default function Upcoming_Events() {
                         </div>
                     </div>
                     <div className="lg:w-full">
-                        <div className="text-[#FCFCFC] leading-tight text-[28px] lg:text-[48px] font-semibold text-center relative flex justify-center lg:text-start">
+                        <div className="text-[#FCFCFC] leading-tight text-[28px] lg:text-[48px] font-semibold text-center max-w-[430px] relative flex justify-center lg:text-start">
                             <div className="relative z-10">Community Health Outreach</div>
                             <div className="w-full max-w-[300px] absolute bottom-0 lg:left-0 lg:bottom-[10px] h-[10px] bg-[#FFA100] z-0">
 

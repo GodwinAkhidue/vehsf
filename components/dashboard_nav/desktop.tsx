@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useState } from "react";
 import { BiDonateHeart } from "react-icons/bi";
 import { FaCheckCircle } from "react-icons/fa";
 import { GoBell } from "react-icons/go";
@@ -12,6 +13,14 @@ import { TiMessage } from "react-icons/ti";
 
 
 export default function Dashboard_Navigation_Desktop() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <Page />
+        </Suspense>
+    );
+}
+
+const Page = () => {
 
     const [expandNav, setExpandNav] = useState(false);
 
@@ -41,11 +50,6 @@ export default function Dashboard_Navigation_Desktop() {
             name: "Messages",
             link: "/dashboard/messages"
         },
-        {
-            icon: GoBell,
-            name: "Notifications",
-            link: "/dashboard/notifications"
-        },
     ];
 
     const links2 = [
@@ -66,6 +70,22 @@ export default function Dashboard_Navigation_Desktop() {
         },
     ]
 
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const notification = searchParams.get("");
+
+    const addQuery = () => {
+        const params = new URLSearchParams(searchParams.toString());
+
+        if (notification) {
+            params.delete("notification");
+        } else {
+            params.set("notification", "true"); // add or update query param
+        }
+
+        router.push(`?${params.toString()}`);
+    };
+
     return (
         <div className={`mt-[10px] hidden lg:block bg-white border border-[#E6EDFF] rounded-r-[10px] ${expandNav ? "px-[40px] w-[250px]" : "px-[30px] w-[70px]"} transition-all duration-300 overflow-hidden py-[50px]`}>
             <div onClick={() => setExpandNav(!expandNav)} className="flex items-center gap-[20px] cursor-pointer">
@@ -83,6 +103,10 @@ export default function Dashboard_Navigation_Desktop() {
                         </Link>
                     ))
                 }
+                <button onClick={() => addQuery()} className="flex items-center gap-[20px]">
+                    <GoBell className="text-[20px] shrink-0" />
+                    <div className="text-[14px] font-semibold whitespace-nowrap">Notifications</div>
+                </button>
                 <div className={`my-[10px] h-[1px] w-[190px] ${expandNav ? "bg-[#C4C4C4]" : "bg-transparent"}`}>
 
                 </div>

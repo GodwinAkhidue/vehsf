@@ -1,11 +1,10 @@
 "use client"
 import { Suspense } from "react";
-import For_You from "./for-you";
-import News_and_Updates from "./news-and-update";
-import Recent_Activities from "./recent-activities";
-import Upcoming_Events from "./upcoming-events";
-import Volunteer_Statistics from "./volunteer_statistics";
-import { useSearchParams } from "next/navigation";
+import For_You from "./components/for-you";
+import News_and_Updates from "./components/news-and-update";
+import Recent_Activities from "./components/recent-activities";
+import Upcoming_Events from "./components/upcoming-events";
+import Volunteer_Statistics from "./components/volunteer_statistics";
 
 
 export default function Dashboard() {
@@ -18,17 +17,12 @@ export default function Dashboard() {
 
 const Page = () => {
 
-    const searchParams = useSearchParams();
-    const notification = searchParams.get("notification")
-
     return (
         <div className="p-[15px] w-full lg:flex lg:flex-row-reverse gap-[10px] lg:p-0 lg:pr-[10px]">
-            {
-                !notification && <div className="flex flex-col gap-[20px] lg:mt-[10px]">
-                    <For_You />
-                    <News_and_Updates />
-                </div>
-            }
+            <div className="flex flex-col gap-[20px] lg:mt-[10px]">
+                <For_You />
+                <News_and_Updates />
+            </div>
             <div className="w-full">
                 <div className="font-semibold text-[24px] mt-[20px] mb-[7px]">Welcome back, Tosin</div>
                 <Upcoming_Events />

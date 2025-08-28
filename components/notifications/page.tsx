@@ -31,7 +31,7 @@ const Page = () => {
     };
 
     return (
-        <div className={`fixed bottom-0 right-0 z-50 ${notification ? "w-[315px] lg:w-[440px] p-[20px] border border-[#E6EDFF]" : "w-0"} transition-all duration-700 overflow-hidden h-[calc(100vh-65px)] lg:h-max lg:static rounded-tl-[20px] poppins bg-white`}>
+        <div className={`fixed top-0 lg:top-[128px] z-50 ${notification ? "border border-[#E6EDFF] right-0" : "-right-[100%]"} w-[315px] lg:w-[326px] p-[20px] transition-all duration-500 overflow-hidden h-full lg:h-[calc(100vh-128px)] rounded-tl-[20px] poppins bg-white`}>
             <div className="flex items-center justify-between">
                 <div className="text-[24px] font-semibold text-[#121212]">
                     Notifications
@@ -40,7 +40,7 @@ const Page = () => {
                     <IoClose className="text-[24px]" />
                 </button>
             </div>
-            <div className="h-full overflow-y-auto pb-[50px] lg:h-max">
+            <div className="h-full overflow-y-auto pb-[50px]">
                 <div className="mt-[20px] font-semibold">
                     New
                 </div>

@@ -17,7 +17,7 @@ export default function Navigation() {
     }, [])
 
     return (
-        <div className="py-[40px] flex items-center justify-center gap-[20px] lg:gap-[50px]">
+        <div className="py-[40px] lg:py-[50px] flex items-center justify-center gap-[20px] lg:gap-[50px]">
             <div className="text-[#026935] border border-[#026935] font-medium text-[14px] rounded-[5px] px-[15px] lg:px-[20px] py-[10px] cursor-pointer">
                 Previous
             </div>

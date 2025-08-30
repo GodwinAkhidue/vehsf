@@ -22,7 +22,7 @@ export default function Dashboard_Navigation_Desktop() {
 
 const Page = () => {
 
-    const [expandNav, setExpandNav] = useState(false);
+    const [expandNav, setExpandNav] = useState(true);
 
     const links = [
         {

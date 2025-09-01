@@ -31,7 +31,7 @@ const Page = () => {
     };
 
     return (
-        <div className={`fixed top-0 lg:top-[128px] z-50 ${notification ? "border border-[#E6EDFF] right-0" : "-right-[100%]"} w-[315px] lg:w-[326px] p-[20px] transition-all duration-500 overflow-hidden h-full lg:h-[calc(100vh-128px)] rounded-tl-[20px] poppins bg-white`}>
+        <div className={`fixed top-0 lg:top-[128px] z-50 ${notification ? "border border-gray-200 right-0 shadow" : "-right-[100%]"} w-[315px] lg:w-[326px] p-[20px] transition-all duration-500 overflow-hidden h-full lg:h-[calc(100vh-128px)] rounded-tl-[20px] poppins bg-white`}>
             <div className="flex items-center justify-between">
                 <div className="text-[24px] font-semibold text-[#121212]">
                     Notifications

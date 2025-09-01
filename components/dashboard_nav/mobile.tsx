@@ -2,12 +2,13 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
+import { AiOutlineUser } from "react-icons/ai";
 import { BiDonateHeart } from "react-icons/bi";
 import { FaCheckCircle } from "react-icons/fa";
 import { GoBell } from "react-icons/go";
 import { GrTransaction } from "react-icons/gr";
 import { IoIosPeople } from "react-icons/io";
-import { IoMenu, IoSettingsOutline } from "react-icons/io5";
+import { IoMenu } from "react-icons/io5";
 import { LuMessageCircleQuestion } from "react-icons/lu";
 import { MdOutlineLogout, MdOutlineSpaceDashboard } from "react-icons/md";
 
@@ -54,11 +55,6 @@ const Page = () => {
 
     const links2 = [
         {
-            icon: IoSettingsOutline,
-            name: "Settings",
-            link: "/dashboard/settings"
-        },
-        {
             icon: LuMessageCircleQuestion,
             name: "FAQ & Support",
             link: "/dashboard/faq-and-support"
@@ -73,6 +69,7 @@ const Page = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
     const notification = searchParams.get("notification");
+    const profile = searchParams.get("profile");
 
     const addQuery = () => {
         const params = new URLSearchParams(searchParams.toString());
@@ -85,6 +82,18 @@ const Page = () => {
 
         router.push(`?${params.toString()}`);
         setShowNav(false);
+    };
+
+    const addQueryProfile = () => {
+        const params = new URLSearchParams(searchParams.toString());
+
+        if (profile) {
+            params.delete("profile");
+        } else {
+            params.set("profile", "true"); // add or update query param
+        }
+
+        router.push(`?${params.toString()}`);
     };
 
     return (
@@ -113,6 +122,10 @@ const Page = () => {
                     <div className="my-[10px] h-[1px] bg-[#C4C4C4] w-[190px]">
 
                     </div>
+                    <button onClick={() => addQueryProfile()} className="flex items-center gap-[5px]">
+                        <AiOutlineUser className="text-[20px]" />
+                        <div className="text-[14px] font-semibold">Profile</div>
+                    </button>
                     {
                         links2.map((i, index) => (
                             <Link href={i.link} key={index} className="flex items-center gap-[5px]">

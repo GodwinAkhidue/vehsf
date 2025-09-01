@@ -6,10 +6,10 @@ import { BiDonateHeart } from "react-icons/bi";
 import { FaCheckCircle } from "react-icons/fa";
 import { GoBell } from "react-icons/go";
 import { GrTransaction } from "react-icons/gr";
+import { IoIosPeople } from "react-icons/io";
 import { IoMenu, IoSettingsOutline } from "react-icons/io5";
 import { LuMessageCircleQuestion } from "react-icons/lu";
 import { MdOutlineLogout, MdOutlineSpaceDashboard } from "react-icons/md";
-import { TiMessage } from "react-icons/ti";
 
 export default function Dashboard_Navigation_Mobile() {
     return (
@@ -46,9 +46,9 @@ const Page = () => {
             link: "/dashboard/commitments"
         },
         {
-            icon: TiMessage,
-            name: "Messages",
-            link: "/dashboard/messages"
+            icon: IoIosPeople,
+            name: "Connect",
+            link: "/dashboard/connect"
         },
     ];
 

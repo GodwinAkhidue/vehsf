@@ -6,7 +6,7 @@ import Table from "./table/table";
 export default function Transactions_Page() {
 
     return (
-        <div className="px-[15px] lg:pl-0 w-full">
+        <div className="px-[15px] lg:pl-0 w-full poppins">
             <div className="font-semibold text-[24px] mt-[20px] mb-[10px]">Transactions History</div>
             <div className="flex flex-col items-center justify-center gap-[20px] lg:justify-between lg:flex-row mt-[15px]">
                 <div className="rounded-[8px] bg-[#F5F5F5] px-[16px] py-[10px] text-[#737375] flex items-center gap-[10px] font-medium w-max">

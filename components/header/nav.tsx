@@ -10,7 +10,7 @@ export default function Nav({ showNav, setShowNav }: { showNav: boolean, setShow
         },
         {
             name: "About Us",
-            url: "/"
+            url: "/about"
         },
         {
             name: "What We Do",

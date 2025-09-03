@@ -14,7 +14,7 @@ export default function Nav({ showNav, setShowNav }: { showNav: boolean, setShow
         },
         {
             name: "What We Do",
-            url: "/"
+            url: "/what-we-do"
         },
         {
             name: "Explore Impact",

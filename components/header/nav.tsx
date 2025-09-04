@@ -26,7 +26,7 @@ export default function Nav({ showNav, setShowNav }: { showNav: boolean, setShow
         },
         {
             name: "Contact Us",
-            url: "/"
+            url: "/contact-us"
         },
     ]
 

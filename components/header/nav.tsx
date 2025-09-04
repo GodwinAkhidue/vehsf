@@ -22,7 +22,7 @@ export default function Nav({ showNav, setShowNav }: { showNav: boolean, setShow
         },
         {
             name: "News / Blog",
-            url: "/"
+            url: "/news-and-blog"
         },
         {
             name: "Contact Us",

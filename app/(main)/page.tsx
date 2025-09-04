@@ -1,4 +1,3 @@
-import Scroll_Top_Arrow from "@/components/scroll-top-arrow/scroll-top-arrow";
 import About from "./home/about/about";
 import Core_Values from "./home/core-values/core-values";
 import Credo from "./home/credo/credo";
@@ -26,7 +25,6 @@ export default async function Home() {
       <Geographical_Reach />
       <Partnership />
       <Impact />
-      <Scroll_Top_Arrow />
     </div>
   );
 }

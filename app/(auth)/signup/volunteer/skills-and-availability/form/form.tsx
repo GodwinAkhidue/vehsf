@@ -2,13 +2,17 @@
 import { IoIosCheckmark } from "react-icons/io";
 import { useRouter } from "next/navigation";
 import { RiAttachment2 } from "react-icons/ri";
-import { FaHandHoldingUsd } from "react-icons/fa";
 import { CiClock2 } from "react-icons/ci";
 import { MdWorkOutline } from "react-icons/md";
+import Skills from "./skills/component";
+import { useSignupContext } from "@/context/auth/signup/context";
+import Resume_Cv from "./resume_cv/component";
 
 export default function Form() {
 
     const router = useRouter();
+
+    const { data, setData } = useSignupContext();
 
     return (
         <div className="w-full ">
@@ -39,43 +43,53 @@ export default function Form() {
                 </div>
             </div>
 
-            <div className="mt-[30px] lg:mt-[40px]">
-                <div className="font-medium text-[14px] lg:text-base">Skills</div>
-                <div className="border border-[#00000080] rounded-[7px] px-[25px] py-[15px] flex items-center w-full gap-[10px] mt-[10px]">
-                    <FaHandHoldingUsd className="text-[#00000080] text-[18px]" />
-                    <input placeholder="Search your Skills" type="text" className="w-full h-full outline-none" />
-                </div>
-            </div>
-            <div className="mt-[20px] lg:mt-[30px]">
-                <div className="font-medium text-[14px] lg:text-base relative">Resume/CV</div>
-                <div className="px-[16px] py-[6px] flex items-center  relative justify-center gap-[8px] border border-[#026935] text-[#026935] mt-[10px] w-max rounded-full">
-                    <div className="text-[12px]">Attach Document</div>
-                    <RiAttachment2 />
-                    <input className="absolute top-0 left-0 w-full h-full opacity-0" type="file" />
-                </div>
-            </div>
+            <Skills />
+
+            <Resume_Cv />
 
             <div className="flex flex-col lg:flex-row lg:gap-[30px] lg:justify-between">
                 <div className="mt-[20px] lg:mt-[30px]">
                     <div className="font-medium text-[14px] lg:text-base">Availability</div>
                     <div className="border border-[#00000080] rounded-[7px] px-[25px] py-[15px] flex items-center w-full gap-[10px] mt-[10px]">
                         <CiClock2 className="text-[#00000080] text-[18px] lg:text-[24px]" />
-                        <select className="w-full h-full outline-none">
-                            <option value="male">Weekdays</option>
-                            <option value="female">Weekends</option>
+                        <select
+                            className="w-full h-full outline-none"
+                            value={data.availability}
+                            onChange={(e) => {
+                                setData((prev: any) => ({
+                                    ...prev,
+                                    availability: e.target.value
+                                }));
+                            }}
+                        >
+                            <option value="">Select Option</option>
+                            <option value="Weekdays">Weekdays</option>
+                            <option value="Weekends">Weekends</option>
                         </select>
                     </div>
                 </div>
+
                 <div className="mt-[20px] lg:mt-[30px]">
                     <div className="font-medium text-[14px] lg:text-base">Preferred Type of Volunteering</div>
                     <div className="border border-[#00000080] rounded-[7px] px-[25px] py-[15px] flex items-center w-full gap-[10px] mt-[10px]">
                         <MdWorkOutline className="text-[#00000080] text-[18px] lg:text-[20px]" />
-                        <select className="w-full h-full outline-none">
-                            <option value="male">On-Site</option>
-                            <option value="female">Remote</option>
+                        <select
+                            className="w-full h-full outline-none"
+                            value={data.preferred_type_of_volunteering}
+                            onChange={(e) => {
+                                setData((prev: any) => ({
+                                    ...prev,
+                                    preferred_type_of_volunteering: e.target.value
+                                }));
+                            }}
+                        >
+                            <option value="">Select Option</option>
+                            <option value="On-Site">On-Site</option>
+                            <option value="Remote">Remote</option>
                         </select>
                     </div>
                 </div>
+
             </div>
 
             <div className="mt-[40px] flex gap-[25px]">

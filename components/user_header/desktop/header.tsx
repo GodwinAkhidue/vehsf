@@ -1,10 +1,10 @@
 import Theme_Switch from "@/components/theme_switch/theme_switch";
 import Image from "next/image";
 import Link from "next/link";
-import { IoIosArrowForward } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
+import ProfileCard from "./profileCard";
 
-export default function User_Header_Desktop() {
+export default function User_Header_Desktop({ profile }: { profile: any }) {
 
     const volunteers = [
         "/images/hero/volunteers/1.jpg",
@@ -58,21 +58,7 @@ export default function User_Header_Desktop() {
                 <div className="ml-[40px]">
                     <Theme_Switch />
                 </div>
-
-                <div className="flex items-center gap-[10px] bg-[#FAFFFD] p-[20px] ml-[20px] shrink-0 rounded-full">
-                    <div className="font-semibold poppins text-[14px]">
-                        Tosin Akin-Ade
-                    </div>
-                    <div className="w-[35px] h-[35px] rounded-full border-2 border-[#026935]">
-                        <div className="w-full h-full border-2 border-white relative rounded-full overflow-hidden">
-                            <Image src={"/images/dashboard_user/1.jpg"} alt="user" fill className="object-cover" />
-                        </div>
-                    </div>
-                    <div className="text-[20px]">
-                        <IoIosArrowForward />
-                    </div>
-                </div>
-
+                <ProfileCard profile={profile} />
             </div>
 
         </div>

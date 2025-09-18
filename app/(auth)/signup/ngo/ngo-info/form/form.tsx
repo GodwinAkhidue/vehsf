@@ -1,16 +1,17 @@
 "use client"
 import { IoIosCheckmark } from "react-icons/io";
 import { useRouter } from "next/navigation";
-import { RiAttachment2 } from "react-icons/ri";
-import { FaHandHoldingUsd } from "react-icons/fa";
 import { CiClock2 } from "react-icons/ci";
 import { MdWorkOutline } from "react-icons/md";
+import { useSignupContext } from "@/context/auth/signup/context";
 import { ngo_positions } from "@/lib/ngo_positions";
 import Location_Input from "@/components/form/location-input";
 
 export default function Form() {
 
     const router = useRouter();
+
+    const { data, setData } = useSignupContext();
 
     return (
         <div className="w-full ">
@@ -27,12 +28,7 @@ export default function Form() {
                     <div className="w-[12px] h-[12px] lg:w-[17px] lg:h-[17px] rounded-full bg-[#026935] text-white flex items-center justify-center text-base mb-[2px]">
                         <IoIosCheckmark className="lg:text-[20px]" />
                     </div>
-                    Skills & Availability
-                </div>
-                <div className="flex items-center gap-[5px] lg:gap-[10px] leading-tight text-[14px] lg:text-[16px] opacity-50 font-semibold">
-                    <div className="w-[12px] h-[12px] lg:w-[17px] lg:h-[17px] rounded-full border-2 lg:border-[3px] border-[#026935] flex items-center justify-center text-base mb-[2px]">
-                    </div>
-                    Emergency Contact
+                    NGO Information
                 </div>
                 <div className="flex items-center gap-[5px] lg:gap-[10px] leading-tight text-[14px] lg:text-[16px] opacity-50 font-semibold">
                     <div className="w-[12px] h-[12px] lg:w-[17px] lg:h-[17px] rounded-full border-2 lg:border-[3px] border-[#026935] flex items-center justify-center text-base mb-[2px]">
@@ -41,36 +37,56 @@ export default function Form() {
                 </div>
             </div>
 
-            <div className="mt-[30px] lg:mt-[40px]">
-                <div className="font-medium text-[14px] lg:text-base">Select Position or Office</div>
+            <div className="mt-[20px] lg:mt-[30px]">
+                <div className="font-medium text-[14px] lg:text-base">Position Held</div>
                 <div className="border border-[#00000080] rounded-[7px] px-[25px] py-[15px] flex items-center w-full gap-[10px] mt-[10px]">
-                    <select className="w-full h-full outline-none">
+                    <select
+                        className="w-full h-full outline-none"
+                        value={data.ngo_position}
+                        onChange={(e) => {
+                            setData((prev: any) => ({
+                                ...prev,
+                                ngo_position: e.target.value
+                            }));
+                        }}
+                    >
+                        <option value="">Position</option>
                         {
-                            ngo_positions.map((i: any, index: any) => (
-                                <option key={index} value={i}>{i}</option>
+                            ngo_positions.map((i, index) => (
+                                <option value={i} key={index}>{i}</option>
                             ))
                         }
                     </select>
                 </div>
             </div>
-            <div className="mt-[20px] lg:mt-[30px]">
-                <div className="font-medium text-[14px] lg:text-base relative">Resume/CV</div>
-                <div className="px-[16px] py-[6px] flex items-center  relative justify-center gap-[8px] border border-[#026935] text-[#026935] mt-[10px] w-max rounded-full">
-                    <div className="text-[12px]">Attach Document</div>
-                    <RiAttachment2 />
-                    <input className="absolute top-0 left-0 w-full h-full opacity-0" type="file" />
-                </div>
-            </div>
 
-            <div className="flex flex-col lg:flex-row lg:gap-[30px] lg:justify-between">
-                <Location_Input />
-            </div>
+            <Location_Input
+                heading="NGO Location"
+                state={data.location.state}
+                setState={(e: any) => setData((prev: any) => (
+                    {
+                        ...prev, location: {
+                            ...prev.location,
+                            state: e
+                        }
+                    }
+                ))}
+                lga={data.location.lga}
+                setLga={(e: any) => setData((prev: any) => (
+                    {
+                        ...prev, location: {
+                            ...prev.location,
+                            lga: e
+                        }
+                    }
+                ))}
+            />
 
             <div className="mt-[40px] flex gap-[25px]">
                 <div onClick={() => router.push("/signup/ngo/personal-info")} className="cursor-pointer py-[8px] px-[31px] border-2 border-[#026935] text-[#026935] rounded-[10px] font-semibold w-max">
                     Previous
                 </div>
-                <div onClick={() => router.push("/signup/ngo/emergency-contact")} className="cursor-pointer py-[10px] px-[33px] bg-[#026935] text-white rounded-[10px] font-semibold w-max">
+                <div onClick={() => router.push("/signup/ngo/create")} className="cursor-pointer py-[10px] px-[33px] bg-[#026935] text-white rounded-[10px] font-semibold w-max">
                     Next
                 </div>
             </div>

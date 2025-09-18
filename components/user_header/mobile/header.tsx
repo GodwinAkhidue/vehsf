@@ -1,7 +1,7 @@
 import Theme_Switch from "@/components/theme_switch/theme_switch";
 import Image from "next/image";
 
-export default function User_Header_Mobile() {
+export default function User_Header_Mobile({ profile }: { profile: any }) {
 
     return (
         <div className="w-screen shadow-lg flex lg:hidden items-center justify-center bg-[#F9FFFC] relative z-50">
@@ -11,11 +11,14 @@ export default function User_Header_Mobile() {
                 <div className="flex items-center gap-[10px] bg-[#FAFFFD] p-[5px] rounded-full w-full">
                     <div className="w-[35px] h-[35px] rounded-full border-2 border-[#026935] shrink-0">
                         <div className="w-full h-full border-2 border-white relative rounded-full overflow-hidden">
-                            <Image src={"/images/dashboard_user/1.jpg"} alt="user" fill className="object-cover" />
+                            {
+                                profile?.profile_picture && profile?.profile_picture?.url &&
+                                <Image src={profile?.profile_picture?.url} alt="user" fill className="object-cover" />
+                            }
                         </div>
                     </div>
                     <div className="font-semibold poppins text-[12px] truncate w-[100px]">
-                        Tosin Akin-Ade
+                        {profile?.firstname && profile?.lastname && `${profile.firstname} ${profile.lastname}`}
                     </div>
                 </div>
 

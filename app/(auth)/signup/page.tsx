@@ -3,10 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import Modal from "./modal/modal";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 export default function Signup_Page() {
 
     const [joinoption, setJoinoption] = useState({ name: "", url: "" });
+    const router = useRouter();
 
     const joinoptions = [
         {
@@ -26,10 +29,12 @@ export default function Signup_Page() {
     const [showModal, setShowModal] = useState(false);
 
     const Continue = () => {
-        if (joinoption.url) {
+        if (joinoption.name === "Volunteer" && joinoption.url) {
             setShowModal(true);
+        } else if (joinoption.url) {
+            router.push(joinoption.url);
         } else {
-            alert("Select an option");
+            toast.info("Select an option")
         }
     }
 

@@ -7,7 +7,7 @@ export default function Connect() {
                 Connect with Staff / Volunteers
             </div>
             <div className="w-full max-w-[350px]">
-                <Location_Input />
+                {/* <Location_Input /> */}
             </div>
             <div className="cursor-pointer w-full max-w-[350px] rounded-[10px] py-[10px] text-white bg-[#026935] flex items-center justify-center mt-[30px]">
                 Search

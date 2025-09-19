@@ -10,7 +10,7 @@ export default function Connect() {
             </div>
             <div>
                 <div className="w-full max-w-[400px]">
-                    <Location_Input />
+                    {/* <Location_Input /> */}
                 </div>
                 <div className="cursor-pointer text-white bg-[#026935] px-[30px] py-[15px] rounded-[5px] w-max mt-[20px]">
                     Search

@@ -1,8 +1,6 @@
 "use client"
 import { IoIosCheckmark } from "react-icons/io";
 import { useRouter } from "next/navigation";
-import { CiClock2 } from "react-icons/ci";
-import { MdWorkOutline } from "react-icons/md";
 import { useSignupContext } from "@/context/auth/signup/context";
 import { ngo_positions } from "@/lib/ngo_positions";
 import Location_Input from "@/components/form/location-input";

@@ -13,7 +13,7 @@ export default async function Complete_One_Time_Donation(
             )
         setLoading(false);
         if (response.data.success === true) {
-            toast.success("Verification Complete, Thank you for you donation");
+            toast.success("Donation Received, Thank you for your donation");
             return setTimeout(() => {
                 router.push("/")
             }, 3000);

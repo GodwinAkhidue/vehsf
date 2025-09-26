@@ -52,7 +52,11 @@ export default function Footer() {
                                     <FaFacebook />
                                 </a>
                             </div>
-                            <div><FaInstagram /></div>
+                            <div>
+                                <a href="https://www.instagram.com/veteransehsf/?utm_source=qr&r=nametag">
+                                    <FaInstagram />
+                                </a>
+                            </div>
                             <div>
                                 <a href="https://www.linkedin.com/in/veterans-empowerment-humanitarian-society-foundation-018705382?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
                                     <FaLinkedin />

@@ -20,11 +20,21 @@ export default function Footer() {
                     <div className="w-full flex flex-col items-center justify-center lg:items-start lg:justify-start">
                         <div className="font-semibold">Home</div>
                         <div className="flex flex-col items-center justify-center lg:items-start mt-[15px] gap-[7px]">
-                            <div>About Us</div>
-                            <div>What We Do</div>
-                            <div>Explore Impact</div>
-                            <div>News / Blog</div>
-                            <div>Contact Us</div>
+                            <div>
+                                <Link href={`/about`}>About Us</Link>
+                            </div>
+                            <div>
+                                <Link href={`/what-we-do`}>What We Do</Link>
+                            </div>
+                            <div>
+                                <Link href={`/explore-impact`}>Explore Impact</Link>
+                            </div>
+                            <div>
+                                <Link href={`/news-and-blog`}>News / Blog</Link>
+                            </div>
+                            <div>
+                                <Link href={`/contact-us`}>Contact Us</Link>
+                            </div>
                         </div>
                     </div>
                     <div className="w-full flex flex-col items-center justify-center lg:items-start lg:justify-start">
@@ -37,12 +47,32 @@ export default function Footer() {
                     </div>
                     <div className="w-full flex flex-col items-center justify-center lg:items-start lg:justify-start">
                         <div className="flex lg:flex-col items-center justify-center lg:items-start mt-[15px] gap-[10px] lg:gap-[15px] text-[20px] lg:text-[24px]">
-                            <div><FaFacebook /></div>
+                            <div>
+                                <a href="https://www.facebook.com/share/1FKdJnj6vC/">
+                                    <FaFacebook />
+                                </a>
+                            </div>
                             <div><FaInstagram /></div>
-                            <div><FaLinkedin /></div>
-                            <div><FaXTwitter /></div>
-                            <div><FaYoutube /></div>
-                            <div><FaTiktok /></div>
+                            <div>
+                                <a href="https://www.linkedin.com/in/veterans-empowerment-humanitarian-society-foundation-018705382?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                                    <FaLinkedin />
+                                </a>
+                            </div>
+                            <div>
+                                <a href="https://x.com/official_vehsf?t=qDZFycnZNMNPGaU6WdZV-Q&s=08">
+                                    <FaXTwitter />
+                                </a>
+                            </div>
+                            <div>
+                                <a href="https://youtube.com/@veteransehsf?si=lFf9cxXvIiGdaOaY">
+                                    <FaYoutube />
+                                </a>
+                            </div>
+                            <div>
+                                <a href="https://www.tiktok.com/@veterans.vehsf?_r=1&_d=em7jja94hk89c4&sec_uid=MS4wLjABAAAAIECwn9nbrVa1GtoPsXEUkWIg_vg5P1sP8id6Rua7oBSgwLBrmaGtNd2QDN6wrEZq&share_author_id=7546123415276160018&sharer_language=en&source=h5_m&u_code=em7jjkej6ciba3&timestamp=1756969509&user_id=7546123415276160018&sec_user_id=MS4wLjABAAAAIECwn9nbrVa1GtoPsXEUkWIg_vg5P1sP8id6Rua7oBSgwLBrmaGtNd2QDN6wrEZq&item_author_type=1&utm_source=whatsapp&utm_campaign=client_share&utm_medium=android&share_iid=7546123392165480199&share_link_id=3295f52b-952b-4de1-b6f8-ba5f39d7c4e7&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b7360&social_share_type=5&enable_checksum=1">
+                                    <FaTiktok />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

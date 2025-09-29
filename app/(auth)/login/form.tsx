@@ -57,7 +57,7 @@ export default function Form() {
                 <button
                     disabled={loggingIn}
                     onClick={() => login()}
-                    className={`cursor-pointer ${loggingIn ? "bg-gray-600" : "hover:bg-transparent bg-[#026935]"} border-2 border-[#026935] text-white hover:text-[#026935] transition-all duration-300 w-full flex items-center justify-center mt-[33px] rounded-[7px] gap-[10px] py-[10px] font-semibold`}
+                    className={`cursor-pointer ${loggingIn ? "bg-gray-600" : "hover:bg-transparent bg-[#026935] hover:text-[#026935]"} border-2 border-[#026935] text-white transition-all duration-300 w-full flex items-center justify-center mt-[33px] rounded-[7px] gap-[10px] py-[10px] font-semibold`}
                 >
                     {
                         loggingIn ?

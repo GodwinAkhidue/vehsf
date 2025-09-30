@@ -94,7 +94,7 @@ export default function Nav({ showNav, setShowNav }: { showNav: boolean, setShow
                             <Link href={"/dashboard"} className={`border border-[#026935] bg-transparent text-[#026935] hover:bg-[#026935] hover:text-[#f9f9f9] font-semibold px-[30px] py-[10px] rounded-full w-max transition-all duration-300 mt-[20px] xl:mt-0 xl:ml-[12px] cursor-pointer`}>
                                 Dashboard
                             </Link> :
-                            <div className="">
+                            <div className="flex flex-col">
                                 <Link href={"/login"} className={`border border-[#026935] bg-[#026935] text-[#f9f9f9] hover:bg-transparent hover:text-[#026935] font-semibold px-[30px] py-[10px] rounded-full w-max transition-all duration-300 mt-[25px] xl:mt-0 cursor-pointer`}>
                                     Login
                                 </Link>

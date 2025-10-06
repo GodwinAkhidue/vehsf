@@ -41,8 +41,8 @@ function Page() {
                 <div className="h-full overflow-y-auto">
                     <Personal_Information />
                     <Security_And_Privacy />
-                    <Volunteer_Preferences />
-                    <Danger_Zone />
+                    {/* <Volunteer_Preferences /> */}
+                    {/* <Danger_Zone /> */}
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 "use client"
 import { server_url } from "@/constants/server_url";
+import { useUserContext } from "@/context/user/context";
 import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -7,23 +8,7 @@ import { IoClose } from "react-icons/io5";
 
 export default function Nav({ showNav, setShowNav }: { showNav: boolean, setShowNav: Function }) {
 
-    const [loggedIn, setLoggedIn] = useState(false);
-
-    useEffect(() => {
-
-        const api = axios.create({
-            baseURL: server_url,
-            withCredentials: true
-        });
-
-        api.get(`/api/auth/validateSession`)
-            .then((res) => {
-                if (res.data.success === true) {
-                    setLoggedIn(true);
-                }
-            })
-
-    }, [])
+    const { user } = useUserContext();
 
     const urls = [
         {
@@ -90,11 +75,11 @@ export default function Nav({ showNav, setShowNav }: { showNav: boolean, setShow
                         <Link href={"/donate"}>Donate</Link>
                     </div>
                     {
-                        loggedIn ?
+                        user ?
                             <Link href={"/dashboard"} className={`border border-[#026935] bg-transparent text-[#026935] hover:bg-[#026935] hover:text-[#f9f9f9] font-semibold px-[30px] py-[10px] rounded-full w-max transition-all duration-300 mt-[20px] xl:mt-0 xl:ml-[12px] cursor-pointer`}>
                                 Dashboard
                             </Link> :
-                            <div className="flex flex-col">
+                            <div className="flex flex-col lg:flex-row">
                                 <Link href={"/login"} className={`border border-[#026935] bg-[#026935] text-[#f9f9f9] hover:bg-transparent hover:text-[#026935] font-semibold px-[30px] py-[10px] rounded-full w-max transition-all duration-300 mt-[25px] xl:mt-0 cursor-pointer`}>
                                     Login
                                 </Link>

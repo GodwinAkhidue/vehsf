@@ -4,6 +4,7 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import Scroll_Top_Arrow from "@/components/scroll-top-arrow/scroll-top-arrow";
 import { ToastContainer } from "react-toastify";
+import { UserWrapper } from "@/context/user/context";
 
 export const metadata: Metadata = {
   title: "VEHSF",
@@ -25,17 +26,19 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-        <ToastContainer
-          newestOnTop
-          closeOnClick
-          theme="dark"
-          pauseOnFocusLoss={false}
-          pauseOnHover
-        />
-        <Header />
-        {children}
-        <Scroll_Top_Arrow />
-        <Footer />
+        <UserWrapper>
+          <ToastContainer
+            newestOnTop
+            closeOnClick
+            theme="dark"
+            pauseOnFocusLoss={false}
+            pauseOnHover
+          />
+          <Header />
+          {children}
+          <Scroll_Top_Arrow />
+          <Footer />
+        </UserWrapper>
       </body>
     </html>
   );

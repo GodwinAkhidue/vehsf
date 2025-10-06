@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../globals.css";
+import { UserWrapper } from "@/context/user/context";
 
 export const metadata: Metadata = {
     title: "VEHSF",
@@ -21,7 +22,9 @@ export default function RootLayout({
             <body
                 className={`antialiased`}
             >
-                {children}
+                <UserWrapper>
+                    {children}
+                </UserWrapper>
             </body>
         </html>
     );

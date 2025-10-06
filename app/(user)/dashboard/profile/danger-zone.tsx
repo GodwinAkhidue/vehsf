@@ -13,14 +13,14 @@ export default function Danger_Zone() {
             <div className="cursor-pointer text-white bg-[#D40202] px-[30px] py-[15px] rounded-[5px] w-max mt-[20px]">
                 Delete Account
             </div>
-            <div className="font-medium text-[14px] lg:text-base mt-[40px]">Deactivate Account</div>
+            {/* <div className="font-medium text-[14px] lg:text-base mt-[40px]">Deactivate Account</div>
             <div className="text-[12px] mt-[10px]">
                 Temporarily disable your account from operating
             </div>
 
             <div className="cursor-pointer text-white bg-[#D40202] px-[30px] py-[15px] rounded-[5px] w-max mt-[20px]">
                 Deactivate Account
-            </div>
+            </div> */}
         </div>
     );
 }

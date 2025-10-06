@@ -4,6 +4,7 @@ import User_Header from "@/components/user_header/header";
 import Dashboard_Navigation from "@/components/dashboard_nav/nav";
 import Dashboard_Notifications from "@/components/notifications/page";
 import Profile from "./profile/component";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
     title: "VEHSF",
@@ -17,6 +18,13 @@ export default function Dashboard_Layout({
 }>) {
     return (
         <>
+            <ToastContainer
+                newestOnTop
+                closeOnClick
+                theme="dark"
+                pauseOnFocusLoss={false}
+                pauseOnHover
+            />
             <User_Header />
             <div className="flex lg:gap-[10px]">
                 <Dashboard_Navigation />

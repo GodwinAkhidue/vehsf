@@ -3,6 +3,7 @@ import Stats from "./stats";
 import Connect from "./connect";
 import Programs from "./programs";
 import Gallery from "./gallery";
+import Link from "next/link";
 
 export default function Explore_Impact() {
     return (
@@ -17,9 +18,9 @@ export default function Explore_Impact() {
                 <div className="text-[14px] lg:text-base text-center mt-[20px] justify-self-center w-full max-w-[675px]">
                     Discover the difference we are making in communities through your support and our dedicated efforts.
                 </div>
-                <div className="px-[11px] py-[6px] bg-[#026935] text-[#F9F9F9] rounded-[5px] mt-[15px] justify-self-center">
+                <Link href={"/donate"} className="px-[11px] py-[6px] block bg-[#026935] text-[#F9F9F9] rounded-[5px] mt-[15px] justify-self-center">
                     Donate Now
-                </div>
+                </Link>
                 <div className="mt-[40px] lg:mt-[60px]">
                     <Stats />
                 </div>
@@ -49,16 +50,16 @@ export default function Explore_Impact() {
                                 to make a difference. That someone can be you
                             </div>
                             <div className="flex flex-col lg:flex-row gap-[20px] items-center justify-center text-[14px] lg:text-base mt-[20px] lg:mt-[40px]">
-                                <div className="px-[11px] py-[6px] bg-[#F1F1F1] rounded-[5px]">
+                                <Link href={"/signup"} className="px-[11px] py-[6px] bg-[#F1F1F1] rounded-[5px] block">
                                     Become a Volunteer
-                                </div>
+                                </Link>
                                 <div className="flex gap-[20px] items-center justify-center">
-                                    <div className="px-[10px] py-[5px] border border-[#026935] text-[#026935] rounded-[5px]">
+                                    <Link href={"/donate"} className="block px-[10px] py-[5px] border border-[#026935] text-[#026935] rounded-[5px]">
                                         Get involved
-                                    </div>
-                                    <div className="px-[11px] py-[6px] bg-[#026935] text-[#F9F9F9] rounded-[5px]">
+                                    </Link>
+                                    <Link href={"/donate"} className="block px-[11px] py-[6px] bg-[#026935] text-[#F9F9F9] rounded-[5px]">
                                         Donate Now
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

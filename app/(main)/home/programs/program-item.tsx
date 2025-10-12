@@ -23,9 +23,9 @@ export default function Program_Item({ i, reverse }: { i: any, reverse: boolean 
                 <div className="mt-[10px] lg:mt-[35px] poppins text-[14px] lg:text-[18px]">
                     {i.body}
                 </div>
-                <button className="mt-[25px] border-2 border-[#026935] text-[#026935] hover:bg-[#026935] hover:text-white transition-all duration-300 px-[20px] py-[7px] lg:px-[30px] lg:py-[10px] flex items-center justify-center gap-[10px] text-[14px] poppins rounded-[15px] font-semibold cursor-pointer">
+                <a href={i.url} className="mt-[25px] border-2 border-[#026935] text-[#026935] hover:bg-[#026935] hover:text-white transition-all duration-300 px-[20px] py-[7px] lg:px-[30px] w-max lg:py-[10px] flex items-center justify-center gap-[10px] text-[14px] poppins rounded-[15px] font-semibold cursor-pointer">
                     View More <IoIosArrowForward className="text-[18px]" />
-                </button>
+                </a>
             </div>
 
         </div>

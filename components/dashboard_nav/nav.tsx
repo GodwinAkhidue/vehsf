@@ -9,9 +9,14 @@ import { server_url } from "@/constants/server_url";
 export default function Dashboard_Navigation() {
   const router = useRouter();
 
+  const api = axios.create({
+    baseURL: server_url,
+    withCredentials: true,
+  });
+
   const logout = async () => {
     try {
-      await axios.get(`${server_url}/api/auth/logout`).then(() => {
+      await api.get(`/api/auth/logout`).then(() => {
         router.push("/");
       });
     } catch {

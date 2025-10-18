@@ -46,7 +46,7 @@ export default function Footer() {
           <div className="w-full flex flex-col items-center justify-center lg:items-start lg:justify-start">
             <div className="font-semibold">More</div>
             <div className="flex flex-col items-center justify-center lg:items-start mt-[15px] gap-[7px]">
-              <div>Project</div>
+              <a href="mailto:info@vehsf.com" target="_blank">Email Us</a>
               <div>Event</div>
               <Link href={"/donate"}>Donate</Link>
             </div>

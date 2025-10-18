@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { CgMenuRightAlt } from "react-icons/cg";
@@ -7,40 +7,39 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
-    const [showNav, setShowNav] = useState(false);
-    const pathname = usePathname();
+  const [showNav, setShowNav] = useState(false);
+  const pathname = usePathname();
 
-    useEffect(() => {
-        setShowNav(false);
-    }, [pathname])
+  useEffect(() => {
+    setShowNav(false);
+  }, [pathname]);
 
-    return (
-        <div className="w-full shadow-lg flex items-center justify-center bg-[#F9FFFC] relative z-50">
-
-            <div className="pl-[5px] pr-[15px] lg:pl-[35px] lg:py-[20px] lg:pr-[50px] w-full max-w-[1400px] flex items-center justify-between">
-
-                <div>
-                    <Link href={"/"}>
-                        <Image
-                            src={"/images/logo.png"}
-                            alt="vehsf"
-                            width={999}
-                            height={999}
-                            className="w-[100px] lg:w-[140px]"
-                        />
-                    </Link>
-                </div>
-
-                <div className="xl:hidden">
-                    <button onClick={() => setShowNav(true)} className="text-[26px] text-[#026935] cursor-pointer">
-                        <CgMenuRightAlt />
-                    </button>
-                </div>
-
-                <Nav showNav={showNav} setShowNav={setShowNav} />
-
-            </div>
-
+  return (
+    <div className="w-full shadow-lg flex items-center justify-center bg-[#F9FFFC] sticky top-0 left-0 z-50">
+      <div className="pl-[5px] pr-[15px] lg:pl-[35px] lg:py-[10px] lg:pr-[50px] w-full max-w-[1400px] flex items-center justify-between">
+        <div>
+          <Link href={"/"}>
+            <Image
+              src={"/images/logo.png"}
+              alt="vehsf"
+              width={999}
+              height={999}
+              className="w-[100px] lg:w-[140px]"
+            />
+          </Link>
         </div>
-    );
+
+        <div className="xl:hidden">
+          <button
+            onClick={() => setShowNav(true)}
+            className="text-[26px] text-[#026935] cursor-pointer"
+          >
+            <CgMenuRightAlt />
+          </button>
+        </div>
+
+        <Nav showNav={showNav} setShowNav={setShowNav} />
+      </div>
+    </div>
+  );
 }

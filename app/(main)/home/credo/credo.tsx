@@ -4,11 +4,8 @@ export default function Credo() {
     return (
         <div className="w-full flex items-center justify-center">
             <div className="px-[15px] lg:px-[50px] pt-[10px] lg:pt-[20px] w-full max-w-[1000px] flex flex-col items-center justify-center poppins">
-                <div className="relative font-semibold text-[24px] lg:text-[36px]">
-                    Our Credo
-                    <div className="absolute -bottom-[3px] -right-[10px]">
-                        <Image src={'/images/credo/credo-underline.svg'} alt="vehsf" width={999} height={999} className="w-[70px] lg:w-[98px]" />
-                    </div>
+                <div className="relative font-semibold text-[24px] lg:text-[36px] max-w-[600px] text-center">
+                    Empowering Veterans, Strengthening Communities
                 </div>
                 <div className="text-[14px] font-semibold mt-[15px] lg:mt-[20px] lg:text-[18px]">
                     A TOUCH, A SMILE FOR ALL...

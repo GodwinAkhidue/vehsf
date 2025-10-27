@@ -62,7 +62,6 @@ export default function Upload_Image() {
                                 onChange={(e) => upload_image(e)}
                             />
                         </div>
-                        <div className="text-[#00000080] text-[14px] italic mt-[5px]">(Optional)</div>
                     </div>
             }
         </div>

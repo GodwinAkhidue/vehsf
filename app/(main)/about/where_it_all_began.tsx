@@ -11,7 +11,7 @@ export default function Where_It_All_Began() {
             </div>
             <div className="mt-[20px] flex flex-col lg:flex-row w-full lg:justify-between gap-[30px]">
                 <div className="w-full h-[calc(100vw-30px)] max-w-[485px] max-h-[485px] relative rounded-[10px] overflow-hidden">
-                    <Image src={"/images/about/6.jpg"} alt="vehsf" fill className="object-cover" />
+                    <Image src={"/images/about/4.jpeg"} alt="vehsf" fill className="object-cover" />
                 </div>
                 <div className="w-full max-w-[465px] relative">
                     <div className="w-[2px] h-[80px] bg-[#00FF11] rounded-full absolute top-0 left-0"></div>

@@ -61,10 +61,10 @@ export default function Our_Value() {
 
             <div className="w-full max-w-[615px] h-[70vw] max-h-[470px] flex relative">
                 <div className="w-[65%] h-[85%] relative rounded-[5px] overflow-hidden self-end z-10">
-                    <Image src={`/images/about/5.jpg`} alt="vehsf" fill className="object-cover" />
+                    <Image src={`/images/about/5.jpeg`} alt="vehsf" fill className="object-cover object-top" />
                 </div>
                 <div className="w-[65%] h-[85%] absolute top-0 right-0 z-0 rounded-[5px] overflow-hidden self-end">
-                    <Image src={`/images/about/4.jpg`} alt="vehsf" fill className="object-cover" />
+                    <Image src={`/images/about/6.jpeg`} alt="vehsf" fill className="object-cover" />
                 </div>
             </div>
 

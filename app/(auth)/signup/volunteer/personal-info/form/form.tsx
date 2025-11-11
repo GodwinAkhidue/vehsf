@@ -7,16 +7,11 @@ import Location_Input from "@/components/form/location-input";
 import Language_Spoken from "./language_spoken/language_spoken";
 import { useRouter } from "next/navigation";
 import { useSignupContext } from "@/context/auth/signup/context";
-import { useEffect } from "react";
 import Upload_Image from "./upload_image/component";
 
 export default function Form() {
   const router = useRouter();
   const { data, setData } = useSignupContext();
-
-  useEffect(() => {
-    setData((prev: any) => ({ ...prev, role: "volunteer" }));
-  }, []);
 
   return (
     <div className="w-full">

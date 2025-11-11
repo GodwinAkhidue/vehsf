@@ -13,7 +13,6 @@ export default async function Initialize_One_Time_Donation(
             )
         setLoading(false);
         if (response.data.success === true) {
-            console.log(response.data)
             return router.push(response.data.data.url)
         }
         return toast.warn(response.data.message)

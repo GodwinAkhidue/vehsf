@@ -12,7 +12,7 @@ export default function Form() {
 
     const [showpwd, setShowpwd] = useState(false);
     const [showConfpwd, setShowConfpwd] = useState(false);
-    const { data, setData, signup } = useSignupContext();
+    const { data, setData, donor_signup } = useSignupContext();
     const [confirmPassword, setConfirmPassword] = useState("");
     const [termsAndConditionsAgreement, setTermsAndConditionsAgreement] = useState(false);
     const [check, setCheck] = useState(false);
@@ -124,7 +124,7 @@ export default function Form() {
                 </div>
                 <button
                     disabled={!check || signingUp}
-                    onClick={() => signup(setSigningUp)}
+                    onClick={() => donor_signup(setSigningUp)}
                     className={`cursor-pointer py-[10px] px-[33px] text-white rounded-[10px] font-semibold w-max ${check ? "bg-[#026935]" : "bg-gray-600"}`}
                 >
                     {

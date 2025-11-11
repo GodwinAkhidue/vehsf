@@ -1,7 +1,6 @@
 "use client"
 import { IoIosCheckmark } from "react-icons/io";
 import { useRouter } from "next/navigation";
-import { RiAttachment2 } from "react-icons/ri";
 import { CiClock2 } from "react-icons/ci";
 import { MdWorkOutline } from "react-icons/md";
 import Skills from "./skills/component";

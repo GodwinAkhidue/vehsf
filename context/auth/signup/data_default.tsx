@@ -1,5 +1,4 @@
 const data_default = {
-  role: "",
   firstname: "",
   lastname: "",
   email: "",

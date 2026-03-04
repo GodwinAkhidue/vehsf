@@ -1,107 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xml xmlns="https://developers.google.com/blockly/xml">
 
-  <!-- TRADE DEFINITION -->
-  <block type="trade" id="trade_block" x="20" y="20">
+  <block type="trade" x="20" y="20">
     <field name="SYMBOL">R_50</field>
-    <field name="CONTRACT_TYPE">rise_fall</field>
+    <field name="TRADETYPECAT">updown</field>
+    <field name="TRADETYPE">rise_fall</field>
     <field name="DURATIONTYPE">m</field>
     <field name="DURATION">5</field>
 
     <statement name="STRATEGY">
+      <block type="controls_if">
 
-      <!-- MAIN IF -->
-      <block type="controls_if" id="main_if">
-
-        <!-- BUY CONDITIONS -->
+        <!-- BUY CONDITION -->
         <value name="IF0">
           <block type="logic_operation">
             <field name="OP">AND</field>
 
+            <!-- EMA20 > EMA50 -->
             <value name="A">
-              <block type="logic_operation">
-                <field name="OP">AND</field>
-
-                <!-- EMA20 > EMA50 -->
+              <block type="logic_compare">
+                <field name="OP">GT</field>
                 <value name="A">
-                  <block type="logic_compare">
-                    <field name="OP">GT</field>
-                    <value name="A">
-                      <block type="indicator_moving_average">
-                        <field name="PERIOD">20</field>
-                        <field name="TYPE">EMA</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="indicator_moving_average">
-                        <field name="PERIOD">50</field>
-                        <field name="TYPE">EMA</field>
-                      </block>
-                    </value>
+                  <block type="indicator_moving_average">
+                    <field name="PERIOD">20</field>
+                    <field name="TYPE">ema</field>
                   </block>
                 </value>
-
-                <!-- CLOSE > EMA50 -->
                 <value name="B">
-                  <block type="logic_compare">
-                    <field name="OP">GT</field>
-                    <value name="A">
-                      <block type="ohlc">
-                        <field name="OHLCFIELD">close</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="indicator_moving_average">
-                        <field name="PERIOD">50</field>
-                        <field name="TYPE">EMA</field>
-                      </block>
-                    </value>
+                  <block type="indicator_moving_average">
+                    <field name="PERIOD">50</field>
+                    <field name="TYPE">ema</field>
                   </block>
                 </value>
-
               </block>
             </value>
 
-            <!-- RSI CONDITIONS -->
+            <!-- RSI < 40 -->
             <value name="B">
-              <block type="logic_operation">
-                <field name="OP">AND</field>
-
-                <!-- RSI < 40 -->
+              <block type="logic_compare">
+                <field name="OP">LT</field>
                 <value name="A">
-                  <block type="logic_compare">
-                    <field name="OP">LT</field>
-                    <value name="A">
-                      <block type="indicator_rsi">
-                        <field name="PERIOD">14</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number">
-                        <field name="NUM">40</field>
-                      </block>
-                    </value>
+                  <block type="indicator_rsi">
+                    <field name="PERIOD">14</field>
                   </block>
                 </value>
-
-                <!-- RSI Rising -->
                 <value name="B">
-                  <block type="logic_compare">
-                    <field name="OP">GT</field>
-                    <value name="A">
-                      <block type="indicator_rsi">
-                        <field name="PERIOD">14</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="indicator_rsi">
-                        <field name="PERIOD">14</field>
-                        <field name="SHIFT">1</field>
-                      </block>
-                    </value>
+                  <block type="math_number">
+                    <field name="NUM">40</field>
                   </block>
                 </value>
-
               </block>
             </value>
 
@@ -120,95 +67,46 @@
           </block>
         </statement>
 
-        <!-- SELL CONDITIONS -->
+        <!-- SELL CONDITION -->
         <statement name="ELSE">
           <block type="controls_if">
             <value name="IF0">
               <block type="logic_operation">
                 <field name="OP">AND</field>
 
+                <!-- EMA20 < EMA50 -->
                 <value name="A">
-                  <block type="logic_operation">
-                    <field name="OP">AND</field>
-
-                    <!-- EMA20 < EMA50 -->
+                  <block type="logic_compare">
+                    <field name="OP">LT</field>
                     <value name="A">
-                      <block type="logic_compare">
-                        <field name="OP">LT</field>
-                        <value name="A">
-                          <block type="indicator_moving_average">
-                            <field name="PERIOD">20</field>
-                            <field name="TYPE">EMA</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="indicator_moving_average">
-                            <field name="PERIOD">50</field>
-                            <field name="TYPE">EMA</field>
-                          </block>
-                        </value>
+                      <block type="indicator_moving_average">
+                        <field name="PERIOD">20</field>
+                        <field name="TYPE">ema</field>
                       </block>
                     </value>
-
-                    <!-- CLOSE < EMA50 -->
                     <value name="B">
-                      <block type="logic_compare">
-                        <field name="OP">LT</field>
-                        <value name="A">
-                          <block type="ohlc">
-                            <field name="OHLCFIELD">close</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="indicator_moving_average">
-                            <field name="PERIOD">50</field>
-                            <field name="TYPE">EMA</field>
-                          </block>
-                        </value>
+                      <block type="indicator_moving_average">
+                        <field name="PERIOD">50</field>
+                        <field name="TYPE">ema</field>
                       </block>
                     </value>
-
                   </block>
                 </value>
 
-                <!-- RSI > 60 AND Falling -->
+                <!-- RSI > 60 -->
                 <value name="B">
-                  <block type="logic_operation">
-                    <field name="OP">AND</field>
-
+                  <block type="logic_compare">
+                    <field name="OP">GT</field>
                     <value name="A">
-                      <block type="logic_compare">
-                        <field name="OP">GT</field>
-                        <value name="A">
-                          <block type="indicator_rsi">
-                            <field name="PERIOD">14</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="math_number">
-                            <field name="NUM">60</field>
-                          </block>
-                        </value>
+                      <block type="indicator_rsi">
+                        <field name="PERIOD">14</field>
                       </block>
                     </value>
-
                     <value name="B">
-                      <block type="logic_compare">
-                        <field name="OP">LT</field>
-                        <value name="A">
-                          <block type="indicator_rsi">
-                            <field name="PERIOD">14</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="indicator_rsi">
-                            <field name="PERIOD">14</field>
-                            <field name="SHIFT">1</field>
-                          </block>
-                        </value>
+                      <block type="math_number">
+                        <field name="NUM">60</field>
                       </block>
                     </value>
-
                   </block>
                 </value>
 
@@ -231,5 +129,7 @@
 
       </block>
     </statement>
+
   </block>
+
 </xml>

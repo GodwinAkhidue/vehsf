@@ -49,7 +49,7 @@ export default function Our_Team() {
             />
           </div>
           <div className="text-center font-medium mt-[10px]">
-            Prophet Titus .E. Akahormen
+            Titus .E. Akahormen
           </div>
           <div className="text-center text-[14px] text-[#000000CC]">
             National President
